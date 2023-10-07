@@ -2,7 +2,7 @@
 import { FormEvent, Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import Image from "next/image";
-import { addUserEMailToProduct } from "@/lib/actions";
+import { addUserEmailToProduct } from "@/lib/actions";
 
 interface Props {
   productId: string;
@@ -16,7 +16,7 @@ const Modal = ({productId}: Props) => {
     e.preventDefault();
     setisSubmitting(true);
     
-    await addUserEMailToProduct(productId, email)
+    await addUserEmailToProduct(productId, email)
   };
 
   const openModal = () => {

@@ -1,5 +1,5 @@
 "use client";
-import { scrapAndStoreProduct } from "@/lib/actions";
+import { scrapeAndStoreProduct } from "@/lib/actions";
 import { useRouter } from 'next/navigation'
 
 import { FormEvent, useState } from "react";
@@ -33,9 +33,9 @@ const Searchbar = () => {
     }
     try {
       setLoading(true);
-      const product = await scrapAndStoreProduct(search);
-      console.log(`Product ID: ${product._id}`);
-      router.push(`/products/${product._id}`);
+      const product = await scrapeAndStoreProduct(search);
+      console.log(product);
+      
     } catch (error) {
       console.log(error);
     } finally {
