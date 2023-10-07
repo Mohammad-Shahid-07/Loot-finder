@@ -34,7 +34,7 @@ const Searchbar = () => {
     try {
       setLoading(true);
       const product = await scrapeAndStoreProduct(search);
-      console.log(product);
+      router.push(`/products/${product}`)
       
     } catch (error) {
       console.log(error);
