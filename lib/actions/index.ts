@@ -42,6 +42,7 @@ export async function scrapAndStoreProduct(productUrl: string) {
       { upsert: true, new: true }
     );
     revalidatePath(`/products/$${newProduct._id}`);
+    return newProduct;
   } catch (error: any) {
     throw new Error(`Error while scrapping product ${error.message}`);
   }
